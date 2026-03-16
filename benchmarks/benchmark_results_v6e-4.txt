@@ -1,0 +1,155 @@
+kmeans_tpu Benchmarks — Fri Mar  6 16:52:33 UTC 2026
+
+Hardware:
+  CPU model   : AMD EPYC 9B14
+  CPU cores   : 180
+  RAM         : 708Gi
+
+TPU:
+  TPU_0(process=0,(0,0,0,0))
+  TPU_1(process=0,(1,0,0,0))
+  TPU_2(process=0,(0,1,0,0))
+  TPU_3(process=0,(1,1,0,0))
+
+Software:
+  OS          : Linux 6.8.0-1015-gcp
+  Python      : Python 3.10.12
+  JAX         : 0.6.2
+  Scikit-learn: 1.7.2
+  OPENBLAS    : 16 threads
+
+kmeans_tpu Benchmarks — Fri Mar  6 16:52:46 UTC 2026
+1/3 Running CPU vs TPU benchmark...
+
+==================================================
+Initialisation strategy: random
+==================================================
+
+Benchmarking on CPU (init=random) ...
+  Warming up (JIT compilation) ...
+  Run 1/5: 2.2007s
+  Run 2/5: 2.2409s
+  Run 3/5: 2.2397s
+  Run 4/5: 2.2490s
+  Run 5/5: 2.2460s
+  Mean: 2.2353s | Std: 0.0176s | Min: 2.2007s | Max: 2.2490s
+
+Benchmarking on TPU (init=random) ...
+  Warming up (JIT compilation) ...
+  Run 1/5: 0.0524s
+  Run 2/5: 0.0517s
+  Run 3/5: 0.0519s
+  Run 4/5: 0.0520s
+  Run 5/5: 0.0514s
+  Mean: 0.0519s | Std: 0.0004s | Min: 0.0514s | Max: 0.0524s
+
+==================================================
+BENCHMARK SUMMARY — init=random
+==================================================
+  CPU mean time : 2.2353s
+  TPU mean time : 0.0519s
+  Speedup (TPU vs CPU): 43.08x
+==================================================
+
+==================================================
+Initialisation strategy: plusplus
+==================================================
+
+Benchmarking on CPU (init=plusplus) ...
+  Warming up (JIT compilation) ...
+  Run 1/5: 2.2331s
+  Run 2/5: 2.2626s
+  Run 3/5: 2.2718s
+  Run 4/5: 2.2558s
+  Run 5/5: 2.2415s
+  Mean: 2.2530s | Std: 0.0140s | Min: 2.2331s | Max: 2.2718s
+
+Benchmarking on TPU (init=plusplus) ...
+  Warming up (JIT compilation) ...
+  Run 1/5: 0.0692s
+  Run 2/5: 0.0695s
+  Run 3/5: 0.0689s
+  Run 4/5: 0.0690s
+  Run 5/5: 0.0692s
+  Mean: 0.0691s | Std: 0.0002s | Min: 0.0689s | Max: 0.0695s
+
+==================================================
+BENCHMARK SUMMARY — init=plusplus
+==================================================
+  CPU mean time : 2.2530s
+  TPU mean time : 0.0691s
+  Speedup (TPU vs CPU): 32.58x
+==================================================
+2/3 Running scikit-learn vs TPU benchmark...
+Available CPU cores: 180
+
+============================================================
+Initialisation strategy: random
+============================================================
+
+Benchmarking scikit-learn on CPU (init=random) ...
+  Run 1/5: 0.2847s
+  Run 2/5: 0.2141s
+  Run 3/5: 0.2074s
+  Run 4/5: 0.2076s
+  Run 5/5: 0.2097s
+  Mean: 0.2247s | Std: 0.0301s | Min: 0.2074s | Max: 0.2847s
+
+Benchmarking on TPU (init=random) ...
+  Warming up (JIT compilation) ...
+  Run 1/5: 0.0524s
+  Run 2/5: 0.0520s
+  Run 3/5: 0.0522s
+  Run 4/5: 0.0520s
+  Run 5/5: 0.0525s
+  Mean: 0.0522s | Std: 0.0002s | Min: 0.0520s | Max: 0.0525s
+
+============================================================
+FULL BENCHMARK SUMMARY — init=random
+============================================================
+  Scikit-learn CPU mean time : 0.2247s
+  kmeans_tpu TPU mean time   : 0.0522s
+  Speedup (TPU vs sklearn)   : 4.30x
+============================================================
+
+============================================================
+Initialisation strategy: plusplus
+============================================================
+
+Benchmarking scikit-learn on CPU (init=k-means++) ...
+  Run 1/5: 0.2632s
+  Run 2/5: 0.2578s
+  Run 3/5: 0.2573s
+  Run 4/5: 0.2581s
+  Run 5/5: 0.2584s
+  Mean: 0.2590s | Std: 0.0022s | Min: 0.2573s | Max: 0.2632s
+
+Benchmarking on TPU (init=plusplus) ...
+  Warming up (JIT compilation) ...
+  Run 1/5: 0.0692s
+  Run 2/5: 0.0696s
+  Run 3/5: 0.0697s
+  Run 4/5: 0.0693s
+  Run 5/5: 0.0685s
+  Mean: 0.0692s | Std: 0.0004s | Min: 0.0685s | Max: 0.0697s
+
+============================================================
+FULL BENCHMARK SUMMARY — init=k-means++
+============================================================
+  Scikit-learn CPU mean time : 0.2590s
+  kmeans_tpu TPU mean time   : 0.0692s
+  Speedup (TPU vs sklearn)   : 3.74x
+============================================================
+3/3 Running inertia comparison kmeans_tpu vs scikit-learn...
+Dataset: 100000 samples, 32 features, 8 clusters
+
+--- Init: random ---
+  kmeans_tpu inertia  : 2962190.75
+  scikit-learn inertia: 2961855.25
+  Difference          : 0.0113%
+
+--- Init: k-means++ ---
+  kmeans_tpu inertia  : 2961416.75
+  scikit-learn inertia: 2961708.75
+  Difference          : 0.0099%
+
