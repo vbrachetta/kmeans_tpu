@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "kmeans_tpu"
 version = "0.1.0"
-description = "A JAX-based open-source framework for TPU-accelerated clustering"
+description = "A JAX-based open-source package for TPU-accelerated clustering"
 readme = "README.md"
 requires-python = ">=3.9"
 authors = [

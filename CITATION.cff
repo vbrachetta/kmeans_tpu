@@ -6,6 +6,8 @@ version: 0.1.0
 date-released: 2026-03-16
 license: MIT
 repository-code: "https://github.com/vbrachetta/kmeans_tpu"
+doi: 10.5281/zenodo.19048768
+url: "https://doi.org/10.5281/zenodo.19048768"
 authors:
   - family-names: Brachetta
     given-names: Vincenzo
@@ -16,10 +18,10 @@ abstract: >
   kmeans_tpu is an open-source Python package providing a JAX-based implementation
   of K-Means and K-Means++ clustering optimised for Google Tensor Processing Units (TPUs).
   By leveraging JAX's XLA compilation and vectorisation primitives, the package achieves
-  substantial performance gains over both standard CPU-based implementations and optimised
-  multi-threaded libraries such as scikit-learn. Benchmark results on 100,000 samples
-  using Google TPU v4 and v6e hardware demonstrate speedups of up to 80x over a JAX
-  CPU baseline and up to 6x over scikit-learn.
+  substantial performance gains over standard CPU-based implementations, demonstrated
+  against a JAX CPU baseline and the optimised multi-threaded library scikit-learn.
+  Benchmark results on 100,000 samples using Google TPU v4 and v6e hardware demonstrate
+  speedups of up to 80x over a JAX CPU baseline and up to 6x over scikit-learn.
 keywords:
   - clustering
   - k-means
