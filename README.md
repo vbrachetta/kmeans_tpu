@@ -311,7 +311,7 @@ If you use this software in your research, please cite it as follows:
 ```bibtex
 @software{brachetta2026kmeans_tpu,
   author    = {Brachetta, Vincenzo},
-  title     = {kmeans\_tpu: A JAX-based open-source framework for TPU-accelerated clustering},
+  title     = {kmeans\_tpu: A JAX-based open-source package for TPU-accelerated clustering},
   year      = {2026},
   publisher = {Zenodo},
   url       = {https://github.com/vbrachetta/kmeans_tpu},
