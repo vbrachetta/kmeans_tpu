@@ -2,12 +2,12 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
 title: "kmeans_tpu: A JAX-based open-source package for TPU-accelerated clustering"
-version: 0.1.0
-date-released: 2026-03-16
+version: 0.1.1
+date-released: 2026-10-19
 license: MIT
 repository-code: "https://github.com/vbrachetta/kmeans_tpu"
-doi: 10.5281/zenodo.19048768
-url: "https://doi.org/10.5281/zenodo.19048768"
+doi: 10.5281/zenodo.19048767
+url: "https://doi.org/10.5281/zenodo.19048767"
 authors:
   - family-names: Brachetta
     given-names: Vincenzo

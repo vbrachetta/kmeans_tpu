@@ -6,6 +6,9 @@
 
 **A JAX-based open-source package for TPU-accelerated clustering**
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19048768.svg)](https://doi.org/10.5281/zenodo.19048768)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vbrachetta/kmeans_tpu/blob/main/examples/notebooks/01_getting_started.ipynb)
+
 kmeans_tpu is an open-source Python package providing a JAX-based implementation
 of K-Means and K-Means++ clustering optimised for Google Tensor Processing Units (TPUs).
 By leveraging JAX's XLA compilation and vectorisation primitives (jit, vmap),
@@ -46,6 +49,12 @@ To recreate the exact environment used for benchmarking:
 ```bash
 pip install -r requirements.txt
 ```
+
+### Compatibility
+
+The package was developed and benchmarked using JAX 0.6.2 on Python 3.10.12.
+It has also been tested on Google Colab with JAX 0.7.2 and Python 3.13,
+confirming compatibility with newer JAX versions.
 
 ---
 
@@ -174,6 +183,19 @@ python3 01_basic_usage.py
 python3 02_blobs.py
 ```
 
+### Jupyter Notebooks
+
+Interactive notebooks are provided in the [`examples/notebooks/`](examples/notebooks/)
+folder and can be run directly on Google Colab with a TPU runtime:
+
+| Notebook | Description | Colab |
+|---|---|---|
+| `01_getting_started.ipynb` | Installation, basic usage, first clustering result | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vbrachetta/kmeans_tpu/blob/main/examples/notebooks/01_getting_started.ipynb) |
+| `02_kmeans_vs_kmeanspp.ipynb` | Visual comparison of initialisation strategies | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vbrachetta/kmeans_tpu/blob/main/examples/notebooks/02_kmeans_vs_kmeanspp.ipynb) |
+| `03_bfloat16.ipynb` | bfloat16 support and memory comparison | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vbrachetta/kmeans_tpu/blob/main/examples/notebooks/03_bfloat16.ipynb) |
+
+> **Note:** A TPU runtime is required. In Colab: Runtime → Change runtime type → TPU.
+
 ---
 
 ## Benchmarking
@@ -275,6 +297,10 @@ kmeans_tpu/
 │   ├── benchmark_results_v6e.txt
 │   └── run_benchmarks.sh
 ├── examples/
+│   ├── notebooks/
+│   │   ├── 01_getting_started.ipynb
+│   │   ├── 02_kmeans_vs_kmeanspp.ipynb
+│   │   └── 03_bfloat16.ipynb
 │   ├── 01_basic_usage.py
 │   ├── 02_blobs.py
 │   └── blobs_clustering.png
